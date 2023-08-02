@@ -1,0 +1,51 @@
+.buttoncolor{
+    background-color: #5072A7;
+    border-radius: 7px;
+    padding: 6px;
+    color: white;
+    border: 0px;
+    font-weight: 400;
+    font-size: medium;
+
+}
+.buttoncolor:hover{
+    background-color: hsla(218, 55%, 44%, 0.631) ;
+    color: black;
+}
+
+.nothaveacc {
+    display: inline-block;
+    position: relative;
+    color: #0062ff;
+    cursor: pointer;
+    text-decoration: none;
+  }
+  
+  .nothaveacc::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #0062ff;
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+  }
+  
+  .nothaveacc:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+  }
+
+  .customheigth{
+    height: 100vh;
+}
+
+  @media only screen and (max-width: 600px)  {
+    .custominput{
+      width: 100% !important;
+    }
+    
+  }

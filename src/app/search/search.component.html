@@ -1,0 +1,58 @@
+<!-- <div *ngFor="let item of searchResult" class="card" style="width: 18rem;">
+  <div class="d-flex">
+    <div>
+      <img src="{{item.images[0]}}" class="card-img-top" alt="...">
+      </div>
+      <div>
+        <div class="card-body">
+          <h5 class="card-title customtext">{{item.title}}</h5>
+            <p class="card-text text-truncate custom mb-2">{{item.description}}</p>
+            <h5 class="card-text custompricetext">${{item.price}}</h5>
+            <div class="d-flex align-items-center mb-2">
+              <span class="card-text text-truncate text-white  rating">{{item.rating}}<i style="font-size: 12px; margin-left: 2px;" class="fa fa-star" aria-hidden="true"></i></span>	
+              <p class="verifed">{{item.discountPercentage}}% off</p>
+            </div>
+        </div>
+      </div>
+  </div>
+  
+</div> -->
+<div>
+  <div class="mt-5">
+    <a (click)="onClick(item.id)" *ngFor="let item of searchResult" class="card mt-3 shadow">
+      <div class="d-flex">
+        <div class="impro">
+          <img
+            src="{{ item.images[0] }}"
+            (click)="onClick(item.id)"
+            class="rounded-start"
+            alt="..."
+            width="230px"
+            height="230px"
+          />
+        </div>
+        <div class="property  w-100">
+          <div class="card-body customsercom  p-3">
+            <h5 class="card-title customtext">{{ item.title }}</h5>
+            <p class="card-text text-truncate custom mb-2">{{ item.description }}</p>
+            <h5 class="card-text custompricetext">${{ item.price }}</h5>
+            <div class="d-flex align-items-center">
+              <span class="card-text text-truncate text-white rating"
+                >{{ item.rating
+                }}<i
+                  style="font-size: 12px; margin-left: 2px"
+                  class="fa fa-star"
+                  aria-hidden="true"
+                ></i
+              ></span>
+              <p class="verifed ms-2">{{ item.discountPercentage }}% off</p>
+            </div>
+              <p class="mb-1 del">Free delivery by <strong class="strong"> 29th Jul</strong></p>
+              <p class="mb-1 offer"> 29th Jul <strong class="strong">₹10,450</strong> Off on Exchange</p>
+              <p class="mb-1 bankoffer">Bank Offer</p>
+          </div>
+        </div>
+      </div>
+    </a>
+  </div>
+</div>

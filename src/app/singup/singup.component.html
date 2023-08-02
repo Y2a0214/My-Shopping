@@ -1,0 +1,196 @@
+<div class="customheigth">
+<form
+  class="m-5"
+  *ngIf="!showLogin"
+  [formGroup]="singUpform"
+  (ngSubmit)="UsersignUp(singUpform.value)"
+>
+  <div class="form-row w-50 m-auto p-3 custominput">
+    <div class="form-group col-md-auto mt-2">
+      <label>Name </label>
+      <input
+        type="text"
+        class="form-control"
+        formControlName="name"
+        [class.is-invalid]="
+          (singUpform.get('name').touched || singUpform.get('name').dirty) &&
+          singUpform.get('name').errors
+        "
+      />
+      <div
+        class="text-danger form-text"
+        *ngIf="
+          (singUpform.get('name').touched || singUpform.get('name').dirty) &&
+          singUpform.get('name').errors
+        "
+      >
+        <div *ngIf="singUpform.get('name').errors?.['required']">
+          Field Required
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-auto mt-2">
+      <label>Email </label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="
+          (singUpform.get('email').touched || singUpform.get('email').dirty) &&
+          singUpform.get('email').errors
+        "
+      />
+      <div
+        class="text-danger form-text"
+        *ngIf="
+          (singUpform.get('email').touched || singUpform.get('email').dirty) &&
+          singUpform.get('email').errors
+        "
+      >
+        <div *ngIf="singUpform.get('email').errors?.['required']">
+          Field Required
+        </div>
+        <div *ngIf="singUpform.get('email').errors?.['pattern']">
+          Invaild Email
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-auto mt-2">
+      <label>Password </label>
+      <span class="reltiveeye">
+        <input
+          type="{{ Showpassword?'text' : 'password'}}"
+          class="form-control "
+          formControlName="password"
+          [class.is-invalid]="
+            (singUpform.get('password').touched ||
+              singUpform.get('password').dirty) &&
+            singUpform.get('password').errors
+            
+          "
+        />
+        <div class="form-check  mt-2">
+          <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="seePassword()">
+          <label class="form-check-label" for="flexCheckChecked">
+            Show Password
+          </label>
+        </div>
+      </span>
+      <div
+        class="text-danger form-text"
+        *ngIf="
+          (singUpform.get('password').touched ||
+            singUpform.get('password').dirty) &&
+          singUpform.get('password').errors
+        "
+      >
+        <div *ngIf="singUpform.get('password').errors?.['required']">
+          Field Required
+        </div>
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="!singUpform.valid"
+      class="buttoncolor mt-4 w-100"
+    >
+      Sign Up
+    </button>
+    <div class="m-2">
+      <p>
+        Already Have Account?
+        <a class="nothaveacc" (click)="logIn()">Click to Login</a>
+      </p>
+    </div>
+  </div>
+</form>
+
+<!-- login -->
+
+<form
+  *ngIf="showLogin"
+  class="m-5"
+  [formGroup]="logInform"
+  (ngSubmit)="UserlogIn(logInform.value)"
+>
+  <div class="form-row w-50 m-auto p-3 custominput">
+    <div>
+      <p class="text-center text-danger">{{ errorLogin }}</p>
+    </div>
+    <div class="form-group col-md-auto mt-2">
+      <label>Email: </label>
+      <input
+        type="email"
+        class="form-control"
+        formControlName="email"
+        [class.is-invalid]="
+          (logInform.get('email').touched || logInform.get('email').dirty) &&
+          logInform.get('email').errors
+        "
+      />
+      <div
+        class="text-danger form-text"
+        *ngIf="
+          (logInform.get('email').touched || logInform.get('email').dirty) &&
+          logInform.get('email').errors
+        "
+      >
+        <div *ngIf="logInform.get('email').errors?.['required']">
+          Field Required
+        </div>
+        <div *ngIf="logInform.get('email').errors?.['pattern']">
+          Invaild Email
+        </div>
+      </div>
+    </div>
+    <div class="form-group col-md-auto mt-2">
+      <label>Password: </label>
+      <span class="reltiveeye">
+        <input
+        type="{{ Showpassword?'text' : 'password'}}"
+        class="form-control"
+        formControlName="password"
+        [class.is-invalid]="
+          (logInform.get('password').touched ||
+            logInform.get('password').dirty) &&
+          logInform.get('password').errors
+        "
+      />
+      <div class="form-check  mt-2">
+        <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" (click)="seePassword()">
+        <label class="form-check-label" for="flexCheckChecked">
+          Show Password
+        </label>
+      </div>
+      </span>
+      
+      <div
+        class="text-danger form-text"
+        *ngIf="
+          (logInform.get('password').touched ||
+            logInform.get('password').dirty) &&
+          logInform.get('password').errors
+        "
+      >
+        <div *ngIf="logInform.get('password').errors?.['required']">
+          Field Required
+        </div>
+      </div>
+    </div>
+    <button
+      type="submit"
+      [disabled]="!logInform.valid"
+      class="buttoncolor mt-2 w-100"
+
+    >
+      LogIn
+    </button>
+    <div class="m-2">
+      <p>
+        Don't Have Account?
+        <a class="nothaveacc" (click)="singUp()">Click to Sing-Up</a>
+      </p>
+    </div>
+  </div>
+</form>
+</div>

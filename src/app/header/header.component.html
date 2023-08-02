@@ -1,0 +1,135 @@
+<div>
+  <nav class="navbar  fixed-top navbar-expand-lg headercolor">
+    <div class="container" title="conten">
+      <a class="navbar-brand p-0 me-3" routerLink="home">
+        <img src="../../assets/img/18029009021619615165-128.png" alt="Logo" width="43" height="42"
+          class="d-inline-block align-text-top">
+      </a>
+      <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
+        <ul *ngIf="menuType === 'default'" class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link namehead me-3"  routerLink="mens">Mens</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link namehead me-3" routerLink="Eletronics">Eletronics</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link namehead me-3" routerLink="login"><i class="fa fa-sign-in" aria-hidden="true"></i>SingUp</a>
+          </li>
+        </ul>
+        <div *ngIf="menuType === 'default'">
+          <button routerLink="login" class="carticon">
+            <i style="font-size: 35px;" class="fa fa-shopping-bag" aria-hidden="true"></i>
+            <div
+              class="position-absolute top-2 start-20 translate-middle bg-danger border border-light rounded-circle text-white bdg">
+              {{cartItem}}</div>
+          </button>
+          <span routerLink="login" class="bdg01">My Cart ({{cartItem}})</span>
+        </div>
+        <ul *ngIf="menuType === 'home'"
+          class="navbar-nav w-100 justify-content-between align-items-center customhomeheader">
+          <li class="d-flex customheader">
+            <div>
+              <a class="nav-link namehead me-3" aria-expanded="false" routerLink="mens">Mens</a>
+            </div>
+            <div>
+              <a class="nav-link namehead me-3" routerLink="Eletronics">Eletronics</a>
+            </div>
+          </li>
+          <form class="d-flex w-50 customsearch" role="search">
+            <input class="form-control me-2 position-relative searchnon serachbar" #searchInput (keyup)="searchProduct($event)"
+              (blur)="hindSearch()" type="search" placeholder="Search" aria-label="Search">
+            <button class="serachbarbtn searchnon" (click)="submitSearch(searchInput.value)"
+              type="submit"><i class="fa fa-search searchicon" aria-hidden="true"></i></button>
+            <ul class="dropdownList" *ngIf="searchResult">
+              <li *ngFor="let list of searchResult">
+                <a (mousedown)="redirectToDetails(list.title)">{{list.title}}</a>
+              </li>
+            </ul>
+          </form>
+          <li aria-ex class="nav-item d-flex align-items-center customheader">
+            <div class="d-flex  align-items-center me-4">
+              <i class="fa fa-user removename" aria-hidden="true"></i>
+              <a class="nav-link removename">{{sellerName | titlecase}}</a>
+            </div>
+            <div>
+              <a class="nav-link namehead pe-auto" (click)="logOut()"><i class="fa fa-sign-out" aria-hidden="true"></i>LogOut</a>
+            </div>
+          </li>
+          <div>
+            <button routerLink='cart' class="carticon ">
+              <i style="font-size: 30px;" class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <div
+                class="position-absolute top-2 start-20 translate-middle bg-danger border border-light rounded-circle text-white bdg">
+                {{cartItem}}</div>
+            </button>
+            <span routerLink='cart' class="bdg01">My Cart ({{cartItem}})</span>
+          </div>
+        </ul>
+      </div>
+      <button id="searchBar" class="navbar-toggler customtoggle" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</div>
+
+<!-- <div class="collapse navbar-collapse justify-content-between"  id=""> 
+          <ul *ngIf="menuType === 'default'" class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link namehead me-3"  routerLink="mens">Mens</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link namehead me-3" routerLink="Eletronics" >Eletronics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link namehead me-3" routerLink="login">SingUp</a>
+            </li>
+          </ul>
+          <div *ngIf="menuType === 'default'">
+            <button routerLink="login" class="carticon">
+              <i style="font-size: 35px;" class="fa fa-shopping-bag" aria-hidden="true"></i>
+              <div class="position-absolute top-2 start-20 translate-middle bg-danger border border-light rounded-circle text-white bdg">{{cartItem}}</div>
+             </button>
+             <span routerLink="login" class="bdg01">My Cart ({{cartItem}})</span>
+          </div>   
+          <ul *ngIf="menuType === 'home'" class="navbar-nav w-100 justify-content-between align-items-center customhomeheader">
+            <li class="d-flex customheader">
+              <div>
+              <a class="nav-link namehead me-3" aria-expanded="false" routerLink="mens">Mens</a>
+              </div>
+              <div>
+                <a class="nav-link namehead me-3"routerLink="Eletronics" >Eletronics</a>
+              </div>
+            </li>
+            <form class="d-flex w-50 customsearch" role="search">
+              <input class="form-control me-2 position-relative serachbar" #searchInput (keyup)="searchProduct($event)" (blur)="hindSearch()" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success" (click)="submitSearch(searchInput.value)" type="submit">Search</button>
+              <ul class="dropdownList" *ngIf="searchResult">
+                <li *ngFor="let list of searchResult">
+                  <a (mousedown)="redirectToDetails(list.title)">{{list.title}}</a>
+                </li>
+              </ul>
+            </form>
+            <li aria-ex class="nav-item d-flex align-items-center customheader">
+              <div class="d-flex  align-items-center me-3">
+                <i class="fa fa-user removename" aria-hidden="true"></i>
+                <a class="nav-link removename">{{sellerName | titlecase}}</a>
+              </div>
+              <div>
+                <a class="nav-link namehead pe-auto" (click)="logOut()">LogOut</a>
+              </div>
+            </li>
+            <div>
+              <button [routerLink]="cartItem>0? 'cart' :null" class="carticon ">
+                <i style="font-size: 30px;" class="fa fa-shopping-bag" aria-hidden="true"></i>
+                <div class="position-absolute top-2 start-20 translate-middle bg-danger border border-light rounded-circle text-white bdg">{{cartItem}}</div>
+              </button> 
+              <span [routerLink]="cartItem>0? 'cart' :null" class="bdg01">My Cart ({{cartItem}})</span>
+            </div>
+          </ul>
+        </div> -->
+<!-- <button id="searchBar" class="navbar-toggler customtoggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" >
+          <span class="navbar-toggler-icon"></span>
+        </button> -->

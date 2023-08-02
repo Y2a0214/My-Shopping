@@ -1,0 +1,18 @@
+.strong{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+.offer , .del{
+    font-size: medium;
+}
+
+.customheigth{
+    height: 100vh;
+}
+
+@media only screen and (max-width: 991px) {
+    .customform{
+        width: 100% !important;
+    }
+}

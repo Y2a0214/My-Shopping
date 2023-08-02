@@ -1,0 +1,52 @@
+<div class="customheigth">
+<div class="d-flex cartmain">
+  <div class="product" style="font-family: 'Merriweather Sans', sans-serif;">
+    <div *ngFor="let item of cartData" class="card m-3">
+      <div class="d-flex g-0 customcard">
+        <div class="col-md-4 madd">
+          <img src="{{item.images[0]}}" class="rounded-start img" alt="..." width='200px' height="156px">
+        </div>
+        <div class="col-md-8 ">
+          <div class="card-body m-2 p-0">
+            <h5 class="card-title customtext">{{item.title}}</h5>
+            <p class="card-text text-truncate custom mb-2">{{item.description}}</p>
+            <h5 class="card-text custompricetext">${{item.price}}</h5>
+            <div class="d-flex align-items-center mb-2">
+              <span class="card-text text-truncate text-white  rating">{{item.rating}}<i
+                  style="font-size: 12px; margin-left: 2px;" class="fa fa-star" aria-hidden="true"></i></span>
+              <p class="verifed">{{item.discountPercentage}}% off</p>
+            </div>
+            <p class="mb-1 customremocvetext" (click)="removeToCart(item.id)">Remove</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!popup" class="totalprice" style="font-family: 'Merriweather Sans', sans-serif;">
+    <div class="card position-fixed pricing w-25">
+      <div class="text-center card-header">Summary</div>
+      <div class="card-body">
+        <h5 class="card-title d-flex justify-content-between"><span>Amount</span><span>{{priceSummary.price}}</span>
+        </h5>
+        <p class="card-text d-flex justify-content-between"><span>Tax</span><span>{{priceSummary.tax}}</span></p>
+        <p class="card-text d-flex justify-content-between"><span>Delivery</span><span>{{priceSummary.delivery}}</span>
+        </p>
+        <p class="card-text d-flex justify-content-between"><span>Discount</span><span class="discount"><i
+              style="font-size: 12.1px;" class="fa fa-minus" aria-hidden="true"></i> ${{priceSummary.discount}}</span>
+        </p>
+        <h4 class="card-title d-flex justify-content-between "><span class="customprice">Total Amount</span> <span
+            class="customprice">{{priceSummary.total}}</span></h4>
+        <button (click)="onCheckout()" class="text-center w-100 custombtn">Check Out</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="popup" class="card text-center">
+  <div class="card-body">
+    <h5 class="card-title">Your cart is empty!</h5>
+    <p class="card-text">Add items to it now..</p>
+    <a (click)="shopNow()" class="btn btn-primary">Shop Now</a>
+  </div>
+</div>
+</div>

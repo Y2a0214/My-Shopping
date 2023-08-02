@@ -1,0 +1,44 @@
+.rating{
+    background-color: #109010;
+    padding: 0.7px;
+    border-radius: 4px;
+    width: auto !important;
+    height: 19px;
+    font-size: 12px;
+}
+
+.verifed{
+    font-size: 13.5px;
+    margin: 0;
+    color: #109010;
+}
+
+a{
+    text-decoration: none;
+}
+
+.custompricetext{
+    font-size: 16;
+    font-weight: 600;
+}
+
+.offer , .del{
+ font-size: small;
+}
+
+.bankoffer{
+    font-size: small;
+    font-weight: 600;
+    color: #109010;
+}
+
+.strong{
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@media only screen and (max-width: 700px) {
+    .customsercom{
+        width: 50%;
+    }
+}

@@ -1,0 +1,173 @@
+.dropdownList {
+  position: absolute;
+  display: list-item !important;
+  z-index: 10;
+  background-color: whitesmoke;
+  width: 31.39%;
+  top: 50px;
+  list-style-type: none;
+  padding-left: 0px;
+}
+
+.dropdownList li {
+  border: none;
+  padding: 5px;
+  list-style-type: none;
+}
+
+.dropdownList li:hover {
+  background-color: lightgray;
+}
+
+.dropdownList li a {
+  cursor: pointer;
+  color: blueviolet;
+}
+
+.headercolor {
+  background-color: #e2e8ed;
+  box-shadow: -7px -2px 47px -17px black;
+}
+
+.namehead {
+  font-weight: 600;
+  border-radius: 11px;
+  color: black;
+  letter-spacing: 0.7px;
+  padding: 4px;
+}
+
+.namehead:hover {
+  background-color: #5072a7;
+  color: white;
+}
+
+.bdg {
+  font-size: 10px;
+  height: 20px;
+  width: 20px;
+  padding: 0.5px;
+}
+
+.carticon{
+  border: none;
+  background-color: rgba(250, 235, 215, 0);
+}
+
+.serachbar{
+  border-radius: 3px;
+  box-shadow: none;
+  border: none;
+  width: 100%;
+  position: relative;
+}
+
+.customtoggle{
+  border: none;
+  position: fixed;
+  right: 0px;
+  top: 17px;
+  box-shadow: none;
+}
+
+
+.serachbarbtn{
+  position: relative;
+  background: transparent;
+  border: 0px;
+}
+
+.searchicon{
+  position: absolute;
+  top: 10px;
+  right: 55px;
+}
+
+
+
+
+@media only screen and (max-width: 991px) {
+
+  
+
+  .carticon{
+   display: none;
+  }
+  .bdg01{
+    font-weight: 600;
+    border-radius: 11px;
+    color: black;
+    letter-spacing: 0.7px;
+    padding: 4px;
+  }
+
+  .serachbar{
+    width: 100%;
+  }
+
+  .customsearch{
+    width: 60% !important;
+    position: relative;
+
+  }
+
+  .customheader{
+    width: 100%;
+    flex-direction: column;
+    align-items: start !important;
+  }
+
+  .removename{
+    display: none;
+  }
+
+  .customhomeheader{
+    align-items: start !important;
+  }
+
+  .dropdownList{
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: whitesmoke;
+    width: 100%;
+    top: 228px;
+    right: 0px;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+  
+  .namehead:hover {
+    background-color: transparent;
+    color: #5070a5;
+  }
+
+  .searchnon{
+    display: none;
+  }
+ 
+
+}
+@media only screen and (min-width: 992px) {
+  .bdg01{
+    display: none;
+  }
+  .open{
+   display: none; 
+  }
+
+  .modal-body{
+    display: none;
+  }
+
+  .dropdownList {
+    position: absolute;
+    display: list-item !important;
+    z-index: 10;
+    background-color: whitesmoke;
+    width: 30%;
+    top: 50px;
+    list-style-type: none;
+    padding-left: 0px;
+  }
+}

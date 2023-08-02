@@ -1,1 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
+.carousel-caption {
+    background: #0000008f;
+    border-radius: 6px;
+}
+
+.carousel-control-prev{
+    justify-content: flex-start;
+}
+
+.carousel-control-next{
+    justify-content: flex-end;
+}
+ .carousel-control-prev-icon{
+    padding: 35px 11px;
+    border-radius: 0px 13px 13px 0px;
+    background-color: black;
+}
+
+.carousel-control-next-icon{
+    padding: 35px 11px;
+    border-radius: 13px 0px 0px 13px;
+    background-color: black;
+}
+
+@media only screen and (max-width: 991px) {
+    .carousel-item{
+        height: 200px;
+    }
+    .carousel-caption {
+        background: transparent;
+        color: transparent;
+    }
+
+    .crosild{
+        margin: 0px !important;
+    }
+
+    /* .container{
+        margin: 0px !important;
+    } */
+}

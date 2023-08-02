@@ -1,0 +1,49 @@
+
+<div *ngIf="ProductsId" style="font-family: 'Merriweather Sans', sans-serif;" class="">
+    <div class="card  border border-0" style="max-width: 100%;">
+        <div class="row g-0">
+          <div class=" w-50 d-flex  flex-wrap imagesbod">
+            <img src="{{ProductsId.images[0]}}" class="trasformhov rounded m-1" alt="..." width="260px">
+            <img src="{{ProductsId.images[1]}}" class="trasformhov rounded m-1" alt="..." width="260px">
+            <img src="{{ProductsId.images[2]}}" class="trasformhov rounded m-1" alt="..." width="260px">
+            <img src="{{ProductsId.images[3]}}" class="trasformhov rounded m-1" alt="..." width="260px">
+          </div>
+          <div class="w-50 buyspace">
+            <div class="card-body bhka m-5"> 
+                <h3 class="card-title text-truncate">{{ProductsId.title}}</h3>
+                <p class="card-text text-truncate">{{ProductsId.description}}</p>
+                <div class="d-flex align-items-center mb-2">
+                  <span class="card-text text-truncate text-white me-2 rating">{{ProductsId.rating}}<i style="font-size: 12px; margin-left: 2px;" class="fa fa-star" aria-hidden="true"></i></span>	
+                  <p class="verifed">{{ProductsId.discountPercentage}}% off</p>
+                </div>
+                <p class="card-text text-truncate">Brand: {{ProductsId.brand}}</p>
+                <p class="card-text text-truncate">Category: {{ProductsId.category}}</p>
+                <h3 class="card-title">${{ProductsId.price}}</h3>
+                <div class="d-flex my-2 align-items-center">
+                  <div class="me-2">
+                  <p class="m-0">Quantity</p>
+                  </div>
+                  <div>
+                  <button style="width: 34px;"  (click)="handleQuantity('min')" class="btn btn-secondary pluseminus rounded-circle">-</button>
+                  <input class="p-1 text-center quntity" type="text" value="{{productQuantity}}">
+                  <button (click)="handleQuantity('pluse')" class="btn btn-secondary pluseminus rounded-circle">+</button>
+                  </div>
+                </div>
+                <p class="mb-1 del">Free delivery by <strong class="strong"> {{todayDate | date:'mediumDate'}}</strong></p>
+                  <p class="mb-1 offer"> {{todayDate | date:'mediumDate'}} <strong class="strong">₹10,450</strong> Off on Exchange</p>
+                  <p class="mb-1 bankoffer">Bank Offer</p>
+                <button *ngIf="!removeCart" class="btnadd" (click)="AddToCart()"><i class="fa fa-shopping-cart" aria-hidden="true"></i> Add To Cart</button>
+                <button *ngIf="removeCart" class="btnremove" (click)="RemoveFromCart(ProductsId.id)"><i class="fa fa-trash" aria-hidden="true"></i> Remove From Cart</button>
+                <button (click)="checkout()" class="btnbuy m-2"><i class="fa fa-bolt" aria-hidden="true"></i> Buy Now</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+

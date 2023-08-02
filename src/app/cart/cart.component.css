@@ -1,0 +1,131 @@
+
+.product{
+    width: 60%;
+    margin: 10px;
+}
+
+.totalprice{
+    width: 40%;
+    padding: 23px;
+}
+
+.custom{
+    font-size: 14px;
+}
+
+.customtext{
+    font-size: 14.5px;
+    font-weight: 600;
+}
+
+.custompricetext{
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.customremocvetext{
+    font-size: 15.7px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.customremocvetext:hover{
+    color: rgb(41, 41, 220);
+}
+
+.rating{
+    background-color: #109010;
+    padding: 0.7px;
+    border-radius: 4px;
+    width: auto !important;
+    height: 19px;
+    font-size: 12px;
+}
+
+.verifed{
+    font-size: 13.5px;
+    margin: 0;
+    color: #109010;
+    margin-left: 6px;
+}
+
+.custombtn{
+    background-color: #fb641b;
+    border: none;
+    border-radius: 4px;
+    padding: 6px;
+    color: white;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.custombtn:hover{
+    background-color: #e97034;
+}
+
+.customprice{
+    font-size: 20px;
+    font-weight: 600;
+
+}
+
+.discount{
+    color: #109010;
+    font-size: 16px;
+}
+
+.img{
+    width:200px; 
+    height:156px;
+}
+.customheigth{
+    height: 100vh;
+}
+
+@media only screen and (max-width: 1200px) {
+    .cartmain{
+        flex-direction: column;
+        
+    }
+    .pricing{
+        position: unset !important;
+        width: 100% !important;
+    }
+
+    .customcard{
+        flex-direction: column;
+    }
+   
+    .totalprice{
+        width: 100% !important;
+    }
+
+    .img{
+        width:100% !important;
+        height:360px !important;
+        border-radius: 7px;
+    }
+    .product{
+        width: auto;
+        margin: 10px;
+    }
+
+    .madd{
+        width: 100% !important;
+    }
+
+    .custom{
+        font-size: 19px;
+    }
+    
+    .customtext{
+        font-size: 19.5px;
+        font-weight: 700;
+    }
+
+    .custompricetext{
+        font-size: 20px;
+        font-weight: 700;
+    }
+    
+}

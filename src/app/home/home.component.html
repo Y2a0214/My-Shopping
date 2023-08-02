@@ -1,0 +1,32 @@
+<ngb-carousel class="m-5 crosild" *ngIf="popularProduct">
+	<ng-template *ngFor="let item of popularProduct" ngbSlide>
+		<div class="picsum-img-wrapper">
+			<img src="{{item.images[3]}}" (click)="onClick(item.id)" alt="Random first slide" width="100%" height="360px" />
+		</div>
+		<div class="carousel-caption background">
+			<h3 class=" font-weight-bold">{{item.title}}</h3>
+			<p class=" font-weight-bold">{{item.description}}</p>
+		</div>
+	</ng-template>
+</ngb-carousel>
+
+<div class="d-flex flex-wrap justify-content-around  ">
+    <a (click)="onClick(ProductDetail.id)" class="card border border-2  m-3 text-decoration-none shadow customcard" *ngFor="let ProductDetail of ProductDetails" style="width: 15rem;">
+        <img src="{{ProductDetail.images[0]}}" alt="..." width="100%" height="210px">
+        <div class="card-body">
+          <h5 class="card-title text-truncate">{{ProductDetail.title}}</h5>
+          <p class="card-text text-truncate mb-1">{{ProductDetail.description}}</p>
+		  <div class="d-flex align-items-center">
+			<span class="card-text text-truncate text-white  rating">{{ProductDetail.rating}}<i style="font-size: 12px; margin-left: 2px;" class="fa fa-star" aria-hidden="true"></i></span>	
+			<p class="verifed ms-2">{{ProductDetail.discountPercentage}}% off</p>
+		  </div>
+          <h5 class="card-title mt-2">${{ProductDetail.price}}</h5>
+        </div>
+    </a>
+</div>
+
+
+
+
+
+

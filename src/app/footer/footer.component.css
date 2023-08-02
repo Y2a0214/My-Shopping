@@ -1,0 +1,17 @@
+/* .footer{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    ;
+} */
+.iconcustom{
+    color: #FFD700;
+    margin-right: 5px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .customfooter{
+        flex-direction: column;
+    }
+}

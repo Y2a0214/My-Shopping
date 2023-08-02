@@ -1,0 +1,48 @@
+.customcard{
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+.customcard:hover{
+    transform: scale(1.1);
+    color: #5072a7;
+}
+
+.rating{
+    background-color: #109010;
+    padding: 0.7px;
+    border-radius: 4px;
+    width: auto !important;
+    height: 19px;
+    font-size: 12px;
+}
+
+.verifed{
+    font-size: 13.5px;
+    margin: 0;
+    color: #109010;
+}
+
+/* .carousel-caption {
+    background: #0000008f;
+    border-radius: 6px;
+}
+
+.carousel-control-next, .carousel-control-prev{
+    justify-content: flex-start;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon{
+    padding: 35px 11px;
+    border-radius: 0px 13px 13px 0px;
+    background-color: black;
+} 
+this is in style.css
+*/
+
+@media only screen and (max-width: 991px) {
+    .customcard{
+        width: 100% !important;
+    }
+}
+

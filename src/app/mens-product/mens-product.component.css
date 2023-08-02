@@ -1,0 +1,28 @@
+.customcard{
+    background-color: #fafafa;
+    cursor: pointer;
+}
+
+.customcard:hover{
+    transform: scale(1.1);
+    color: #5072a7;
+}
+
+.rating{
+    background-color: #109010;
+    padding: 0.7px;
+    border-radius: 4px;
+    width: auto !important;
+    height: 19px;
+    font-size: 12px;
+}
+
+.verifed{
+    font-size: 13.5px;
+    margin: 0;
+    color: #109010;
+}
+
+.customheigth{
+    height: 100vh;
+}

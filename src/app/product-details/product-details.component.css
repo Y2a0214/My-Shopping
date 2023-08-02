@@ -1,0 +1,110 @@
+.quntity{
+    width: 35px;
+    border: none;
+}
+
+.pluseminus{
+    background: transparent;
+    border: 1px solid gray;
+    border-radius: 50%;
+    color: black;
+    font-weight: 800;
+    font-size: 14px;
+}
+
+.rating{
+    background-color: #109010;
+    padding: 0.7px;
+    border-radius: 4px;
+    width: auto !important;
+    height: 19px;
+    font-size: 12px;
+}
+
+.verifed{
+    font-size: 13.5px;
+    margin: 0;
+    color: #109010;
+}
+
+.btnadd{
+    background: #ff9f00;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0.5px 0.5px 3px #939393;
+    padding: 10px 19px;
+    font-weight: 700;
+}
+
+.btnbuy{
+    background: #fb641b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0.5px 0.5px 3px #939393;
+    padding: 10px 19px;
+    font-weight: 700;
+}
+
+.btnremove{
+    background: #ff9f00;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    box-shadow: 0.5px 0.5px 3px #939393;
+    padding: 10px 19px;
+    font-weight: 700;
+}
+
+.trasformhov:hover{
+    transform: scale(1.1);
+}
+
+.card-wrapper{
+    display: flex;
+}
+
+.carousel-control-prev , .carousel-control-next{
+    background-color: rgb(173, 173, 173);
+    width: 6vh;
+    height: 6vh;
+    border-radius: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.imagesbod{
+    width: 47%;
+    justify-content: space-evenly;
+    border: 1px solid rgb(233, 233, 233);
+    border-radius: 3px;
+}
+
+.offer , .del{
+    font-size: small;
+   }
+   
+   .bankoffer{
+       font-size: small;
+       font-weight: 600;
+       color: #109010;
+   }
+   
+   .strong{
+       font-weight: 700;
+       font-size: 14px;
+   }
+
+   @media only screen and (max-width: 991px) {
+    .row{
+        flex-direction: column;
+        align-items: center;
+    }
+    .buyspace{
+        width: 100% !important;
+    }
+    .bhka{
+        margin: 0px !important;
+    }
+   }
