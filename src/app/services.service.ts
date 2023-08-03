@@ -17,7 +17,7 @@ export class ServicesService{
 
   UsersignUp(data: any) {
     this.http
-      .post('http://localhost:3000/singUp', data, { observe: 'response' })
+      .post('https://shopping-x25o.onrender.com/singUp', data, { observe: 'response' })
       .subscribe((result) => {
         this.isSingIn.next(true);
         localStorage.setItem('home', JSON.stringify([result.body]))
@@ -29,7 +29,7 @@ export class ServicesService{
     console.log(data);
     this.http
       .get(
-        `http://localhost:3000/singUp?email=${data.email}&password=${data.password}`,
+        `https://shopping-x25o.onrender.com/singUp?email=${data.email}&password=${data.password}`,
         { observe: 'response' }
       )
       .subscribe((result: any) => {

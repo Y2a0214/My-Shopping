@@ -14,32 +14,32 @@ export class ProductsService {
   constructor(private http:HttpClient) { }
 
   Products(){
-   return this.http.get<any[]>('http://localhost:3000/products')
+   return this.http.get<any[]>('https://shopping-x25o.onrender.com/products')
   }
 
   Productsfilter(){
-    return this.http.get<any[]>('http://localhost:3000/products').pipe(
+    return this.http.get<any[]>('https://shopping-x25o.onrender.com/products').pipe(
       map((response: any[]) => response.filter(value =>  value.category == 'mens clothing'))
    )
   }
 
   ProductsfilterForeletronic(){
-    return this.http.get<any[]>('http://localhost:3000/products').pipe(
+    return this.http.get<any[]>('https://shopping-x25o.onrender.com/products').pipe(
       map((response: any[]) => response.filter(value =>  value.category == 'smartphones' || value.category == 'laptops' ))
    )
   }
 
 
   getProductById(id:number){
-    return this.http.get(`http://localhost:3000/products/${id}`)
+    return this.http.get(`https://shopping-x25o.onrender.com/products/${id}`)
   }
 
   popularProducts(){
-    return this.http.get<any[]>('http://localhost:3000/products?_limit=2')
+    return this.http.get<any[]>('https://shopping-x25o.onrender.com/products?_limit=2')
   }
 
   searchProduct(query:string | null){
-    return this.http.get<any[]>(`http://localhost:3000/products?q=${query}`)
+    return this.http.get<any[]>(`https://shopping-x25o.onrender.com/products?q=${query}`)
   }
 
   localAddtoCart(data:any){ //localdataAddtocart
@@ -68,11 +68,11 @@ export class ProductsService {
   }
 
   addToCart(cartData:cart){
-    return this.http.post('http://localhost:3000/cart' , cartData)
+    return this.http.post('https://shopping-x25o.onrender.com/cart' , cartData)
   }
 
   getCartList(userId:number){
-    return this.http.get<product[]>('http://localhost:3000/cart?userId=' + userId,
+    return this.http.get<product[]>('https://shopping-x25o.onrender.com/cart?userId=' + userId,
     {observe:'response'}).subscribe(( result) => 
       {
         // console.warn(result)
@@ -84,12 +84,12 @@ export class ProductsService {
   }
 
   RemoveFromCart(cartId:number){
-    return this.http.delete('http://localhost:3000/cart/' + cartId)
+    return this.http.delete('https://shopping-x25o.onrender.com/cart/' + cartId)
   }
 
   currentCart(){
     let userStorage = localStorage.getItem('home');
     let userData = userStorage && JSON.parse(userStorage)[0];
-    return this.http.get<cart[]>('http://localhost:3000/cart?userId=' + userData.id)
+    return this.http.get<cart[]>('https://shopping-x25o.onrender.com/cart?userId=' + userData.id)
   }
 }
