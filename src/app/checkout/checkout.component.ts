@@ -16,6 +16,7 @@ export class CheckoutComponent {
   fromModal:any
   submited:string = ''
   closeResult = '';
+  todayDate!: Date;
 
   constructor(private fb:FormBuilder , private productService:ProductsService , private route:Router , private modalService: NgbModal){}
 
@@ -37,6 +38,10 @@ export class CheckoutComponent {
         })
       });
       this.totalcheckout()
+
+    const currentDate = new Date()
+    currentDate.setDate(currentDate.getDate() + 1)
+    this.todayDate = currentDate  
   }
 
   totalcheckout(){

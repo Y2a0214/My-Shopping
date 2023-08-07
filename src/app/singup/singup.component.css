@@ -39,10 +39,6 @@
     transform-origin: bottom left;
   }
 
-  .customheigth{
-    height: 100vh;
-}
-
   @media only screen and (max-width: 600px)  {
     .custominput{
       width: 100% !important;

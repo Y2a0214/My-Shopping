@@ -23,6 +23,9 @@
     color: #109010;
 }
 
-.customheigth{
-    height: 100vh;
+@media only screen and (max-width: 991px) {
+    .customcard{
+        width: 100% !important;
+    }
 }
+

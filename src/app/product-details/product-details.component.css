@@ -96,9 +96,7 @@
        font-size: 14px;
    }
 
-   .customheigth{
-    height: 100vh;
-}
+
 
    @media only screen and (max-width: 991px) {
     .row{
@@ -111,4 +109,6 @@
     .bhka{
         margin: 0px !important;
     }
+
+    
    }

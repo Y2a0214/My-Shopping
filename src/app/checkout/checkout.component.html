@@ -95,7 +95,7 @@
     </div>
     <div class="modal-body">
         <h5 class="text-success">{{submited}}</h5>
-        <p class="mb-1 del">Free delivery by <strong class="strong"> 29th Jul</strong></p>
+        <p class="mb-1 del">Free delivery by <strong class="strong">{{todayDate | date:'mediumDate'}}</strong></p>
     </div>
     <div class="modal-footer">
         <button class="btn btn-primary" aria-label="Close" (click)="modal.dismiss()" (click)="toHome()">Back to Home Page</button>
