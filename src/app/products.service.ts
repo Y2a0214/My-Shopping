@@ -92,4 +92,14 @@ export class ProductsService {
     let userData = userStorage && JSON.parse(userStorage)[0];
     return this.http.get<cart[]>('https://shopping-x25o.onrender.com/cart?userId=' + userData.id)
   }
+
+  deletCartdata(cartId:number){
+    return this.http.delete('https://shopping-x25o.onrender.com/cart/' + cartId).subscribe((result) => 
+    {
+      if(result){
+        this.cartData.emit([])
+      }               
+    }
+    )
+  }
 }

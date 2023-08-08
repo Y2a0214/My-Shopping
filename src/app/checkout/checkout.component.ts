@@ -3,6 +3,7 @@ import { FormBuilder , Validators } from '@angular/forms';
 import { ProductsService } from '../products.service';
 import { Router } from '@angular/router';
 import { ModalDismissReasons, NgbDatepickerModule, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { cart } from '../product.Model';
 
 @Component({
   selector: 'app-checkout',
@@ -17,6 +18,7 @@ export class CheckoutComponent {
   submited:string = ''
   closeResult = '';
   todayDate!: Date;
+  cartData: cart[]|undefined
 
   constructor(private fb:FormBuilder , private productService:ProductsService , private route:Router , private modalService: NgbModal){}
 
@@ -47,6 +49,7 @@ export class CheckoutComponent {
   totalcheckout(){
     this.productService.currentCart().subscribe((result) => {
       let price =0
+      this.cartData = result
       result.forEach((item) => {
         if(item.quantity){
         price = price + (+item.price* +item.quantity);
@@ -60,11 +63,12 @@ export class CheckoutComponent {
   onSubmit(data:any){
     if(data){
       this.submited = 'Order Placed Succesfully'
-      this.addresform.reset()
-    //   setTimeout (() => {
-    //     this.route.navigate(['home'])
-    //  }, 1000);
+      this.addresform.reset()  
     }
+    this.cartData?.forEach((item) =>
+        {item.id && this.productService.deletCartdata(item.id)}
+      )
+
     
   }
 
